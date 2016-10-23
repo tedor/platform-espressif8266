@@ -149,24 +149,23 @@ if int(ARGUMENTS.get("PIOVERBOSE", 0)):
     env.Prepend(UPLOADERFLAGS=["-vv"])
 
 
-# if env.subst("$FRAMEWORK") == "sming":
-#     env.Replace(
-#         OBJCOPY="esptool2",
-#         UPLOADER=join(
-#             platform.get_package_dir("tool-esptoolpy"), "esptool.py"),
-#         UPLOADERFLAGS=[
-#             "-p", '"$UPLOAD_PORT"',
-#             "-b", "$UPLOAD_SPEED",
-#             "write_flash",
-#             "-ff", "${__get_board_f_flash(__env__)}m",
-#             "-fm", "$BOARD_FLASH_MODE",
-#             "-fs", "4m",  # @TODO: automate flash size selection in megabits
-#             "0x00000", "${SOURCES[0]}",
-#             "0x09000", "${SOURCES[1]}"
-#         ],
-#         UPLOADCMD='"$PYTHONEXE" $UPLOADER $UPLOADERFLAGS'
-#     )
-
+ if env.subst("$FRAMEWORK") == "sming":
+     env.Replace(
+         OBJCOPY="esptool2",
+         UPLOADER=join(
+             platform.get_package_dir("tool-esptoolpy"), "esptool.py"),
+         UPLOADERFLAGS=[
+             "-p", '"$UPLOAD_PORT"',
+             "-b", "$UPLOAD_SPEED",
+             "write_flash",
+             "-ff", "${__get_board_f_flash(__env__)}m",
+             "-fm", "$BOARD_FLASH_MODE",
+             "-fs", "4m",  # @TODO: automate flash size selection in megabits
+             "0x00000", "${SOURCES[0]}",
+             "0x09000", "${SOURCES[1]}"
+         ],
+         UPLOADCMD='"$PYTHONEXE" $UPLOADER $UPLOADERFLAGS'
+     )
 
 #
 # SPIFFS
