@@ -28,6 +28,10 @@
     "simba": {
       "package": "framework-simba",
       "script": "builder/frameworks/simba.py"
+    },
+    "sming": {
+      "package": "framework-sming",
+      "script": "builder/frameworks/sming.py"
     }
   },
   "packages": {
@@ -40,6 +44,11 @@
       "optional": true,
       "version": "~1.20300.1"
     },
+    "framework-sming": {
+      "type": "framework",
+      "optional": true,
+      "version": "~1.20100.0"
+    },
     "framework-simba": {
       "type": "framework",
       "optional": true,
@@ -48,6 +57,14 @@
     "tool-esptool": {
       "type": "uploader",
       "version": "~1.409.0"
+    },
+    "tool-esptool2": {
+      "type": "uploader",
+      "version": "~1.20000.0"
+    },
+    "tool-esptoolpy": {
+      "type": "uploader",
+      "version": "~1.10100.0"
     },
     "tool-mkspiffs": {
       "type": "uploader",
