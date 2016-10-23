@@ -149,7 +149,7 @@ if int(ARGUMENTS.get("PIOVERBOSE", 0)):
     env.Prepend(UPLOADERFLAGS=["-vv"])
 
 
- if env.subst("$FRAMEWORK") == "sming":
+if env.subst("$FRAMEWORK") == "sming":
      env.Replace(
          OBJCOPY="esptool2",
          UPLOADER=join(
