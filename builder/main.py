@@ -63,13 +63,16 @@ env.Replace(
     ASFLAGS=["-x", "assembler-with-cpp"],
 
     CFLAGS=[
+        "-std=gnu99",
         "-Wpointer-arith",
+        "-Wno-implicit-function-declaration",
         "-Wl,-EL",
+        "-fno-inline-functions",
         "-nostdlib"
     ],
 
     CCFLAGS=[
-        "-Os",
+        "-Os", # optimize for size
         "-mlongcalls",
         "-mtext-section-literals",
         "-ffunction-sections",
@@ -91,6 +94,7 @@ env.Replace(
     LINKFLAGS=[
         "-Os",
         "-nostdlib",
+        "-Wl,--no-check-sections",
         "-u", "call_user_start",
         "-Wl,-static",
         "-Wl,--gc-sections"

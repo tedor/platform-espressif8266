@@ -58,14 +58,6 @@
       "type": "uploader",
       "version": "~1.409.0"
     },
-    "tool-esptool2": {
-      "type": "uploader",
-      "version": "~1.20000.0"
-    },
-    "tool-esptoolpy": {
-      "type": "uploader",
-      "version": "~1.10100.0"
-    },
     "tool-mkspiffs": {
       "type": "uploader",
       "optional": true,
